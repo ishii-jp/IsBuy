@@ -34,5 +34,29 @@ class Requests(models.Model):
         return f'{self.price}円の申請'
 
 # request_commentsテーブル
+class RequestComment(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE
+    )
+
+    comment = models.TextField(
+        verbose_name='コメント',
+        max_length=150
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 # request_filesテーブル
+# まだ未作成です
+
+# request_categoriesテーブル
+class RequestCategory(models.Model):
+    category = models.CharField(
+        verbose_name='カテゴリー',
+        max_length=100
+    )
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
