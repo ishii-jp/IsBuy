@@ -18,7 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('isbuy/', include('isBuy.urls')),
+    path('', include('isBuy.urls')),
     # 認証機能関連ルーティング
     path('accounts/', include('django.contrib.auth.urls')),
 ]
